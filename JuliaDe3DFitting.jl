@@ -130,8 +130,8 @@ function cylinderFit(X)
     for i in 1:params.sampleSize
         X[i, :] -= average
     end
-    jMax = 90 
-    iMax = 360
+    jMax = 30 
+    iMax = 120
     W = zeros(3)
     C = zeros(3)
     θ₀ = 0.0
@@ -155,5 +155,5 @@ function cylinderFit(X)
             end
         end
     end
-    return  W, C + vec(average), sqrt(rSqr)
+    return  W, C + vec(average), sqrt(rSqr), θ₀, θ₁
 end
